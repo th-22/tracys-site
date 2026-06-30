@@ -7,7 +7,7 @@
 body {
   font-family: system-ui, sans-serif;
   background: var(--bg);
-  color: var(--text);
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
@@ -40,12 +40,12 @@ img {
   top: 0;
   width: 100%;
   display: flex;
-  gap: 1.5rem;
+  justify-content: center;
+  gap: 4.5rem;
   padding: 1rem 2rem;
 
-  background: rgba(247, 245, 240, 0.7);
-  backdrop-filter: blur(10px);
-
+  background: transparent;
+  color: var(--text-primary);
   transition: transform 0.3s ease;
   z-index: 100;
 }
@@ -63,3 +63,63 @@ img {
   opacity: 1;
   font-weight: 600;
 }
+
+#hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+
+  background-image: url("../assets/images/haircut_mirror_side.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-container {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  color: var(--text-primary);
+  z-index: 2;
+}
+
+.hero-container h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(5.5rem, 7vw, 9.5rem);
+  line-height: 0.85;   /* makes it feel taller/denser */
+  letter-spacing: -0.03em;
+  margin: 60px 40px 0;
+}
+
+#about {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  gap: 4rem;
+  min-height: 200vh; /* gives scroll room */
+  padding: 6rem 8%;
+}
+
+#about p {
+  font-size: 2rem;
+  font-weight: 
+}
+
+.about-text {
+  flex: 1;
+  width: 50vw;
+}
+
+.about-image {
+  position: sticky;
+  top: 30vh; /* where it sticks */
+  height: fit-content;
+  flex: 1;
+  width: 50vw;
+}
+
