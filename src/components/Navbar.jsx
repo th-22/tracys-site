@@ -11,10 +11,10 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <a onClick={() => scrollTo("hero")}>Hero</a>
-      <a onClick={() => scrollTo("about")}>About</a>
-      <a onClick={() => scrollTo("services")}>Services</a>
-      <a onClick={() => scrollTo("contact")}>Contact</a>
+      <div className="navbar-links">
+        <a onClick={() => scrollTo("contact")}>Contact</a>
+      </div>
+      
     </nav>
   );
 }

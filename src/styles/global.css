@@ -21,7 +21,6 @@ p {
 
 img {
   max-width: 100%;
-  display: block;
 }
 
 .placeholder {
@@ -40,7 +39,7 @@ img {
   top: 0;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 4.5rem;
   padding: 1rem 2rem;
 
@@ -68,7 +67,9 @@ img {
   position: relative;
   height: 100vh;
   overflow: hidden;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-image: url("../assets/images/haircut_mirror_side.jpg");
   background-size: cover;
   background-position: center;
@@ -76,50 +77,193 @@ img {
 
 .hero-container {
   position: absolute;
-  top: 2rem;
-  left: 2rem;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
 
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.5rem;
 
   color: var(--text-primary);
   z-index: 2;
 }
 
-.hero-container h1 {
+.hero-container h2 {
   font-family: var(--font-heading);
-  font-size: clamp(5.5rem, 7vw, 9.5rem);
-  line-height: 0.85;   /* makes it feel taller/denser */
+  font-size: clamp(1.25rem, 2vw, 2rem);
+  line-height: 0.85;
   letter-spacing: -0.03em;
-  margin: 60px 40px 0;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.hero-container h3 {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.2vw, 1.2rem);
+  font-weight: 400;
+  font-style: italic;
+  color: rgb(255 255 255 / 75%);
+  letter-spacing: 0.02em;
+  line-height: .6;
+  text-align: center;
+  margin-top: 0.5rem;
 }
 
 #about {
-  position: relative;
   height: 100vh;
-  overflow: hidden;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  width: 100%;
+  overflow: hidden;
+  margin-left: 7rem;
   gap: 4rem;
-  min-height: 200vh; /* gives scroll room */
-  padding: 6rem 8%;
 }
 
 #about p {
-  font-size: 2rem;
-  font-weight: 
+  font-family: var(--font-heading);
+  font-size: 2em;
+  line-height: 1.3;
 }
 
 .about-text {
-  flex: 1;
-  width: 50vw;
+  display: flex;
+  width: 30%;
+  align-items: end;
+  padding: 2rem;
 }
 
 .about-image {
-  position: sticky;
-  top: 30vh; /* where it sticks */
-  height: fit-content;
-  flex: 1;
-  width: 50vw;
+  display: flex;
+  width: 30%;
+  height: 700px;
+  justify-content: center;
+  align-items: center;
 }
 
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 4.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.navbar-logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.pricing {
+  padding: 120px 20px;
+  background: #fff;
+}
+
+.pricing-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pricing-header {
+  margin-bottom: 80px;
+}
+
+.pricing-header h2 {
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.pricing-header p {
+  margin-top: 12px;
+  color: #666;
+  max-width: 420px;
+  line-height: 1.6;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+.price-card h3 {
+  font-weight: 400;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.pricing-note {
+  max-width: 520px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.pricing-note p {
+  margin-bottom: 20px;
+}
+
+.location {
+  padding: 120px 20px;
+  background: #fff;
+}
+
+.location-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  align-items: stretch;
+}
+
+.location-text h2 {
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.location-text p {
+  color: #333;
+  line-height: 1.7;
+}
+
+.location-note {
+  margin-top: 20px;
+  color: #666;
+  max-width: 320px;
+}
+
+.map {
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .location-container {
+    grid-template-columns: 1fr;
+  }
+
+  .map {
+    height: 320px;
+  }
+}
