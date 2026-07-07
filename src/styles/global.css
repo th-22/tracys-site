@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -29,6 +30,42 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.button {
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.6rem 1.6rem;
+
+  outline: 2px solid var(--text-primary);
+  color: var(--text-secondary);
+
+  border-radius: 999px;
+
+  font: inherit;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button:focus-visible {
+  outline-offset: 4px;
 }
 
 .navbar {
@@ -125,12 +162,9 @@ img {
 }
 
 #about {
-  min-height: 180vh;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 6rem;
-  margin-left: 10rem;
-  margin-bottom: 100vh;
+  position: relative;
+  height: 200vh;
+  display: flex;
 }
 
 .about-image-wrapper {
@@ -139,30 +173,59 @@ img {
 
 #about p {
   font-family: var(--font-heading);
-  font-size: 1.25em;
+  font-size: 1.15em;
   line-height: 1.3;
 }
 
-.about-text {
-  display: flex;
-  width: 60%;
-  align-items: end;
-  margin-bottom:10vh;
-  padding: 2rem;
+.about-container {
+  position: relative;
+  width: 50%;
 }
 
 .about-image {
-  position: sticky;
-  top: 10vh;
-  height: 80vh;
+  width: 60vw;
+  height: 70vh;
   overflow: hidden;
+  position: sticky;
+  bottom: 0;
 }
 
 .about-image img {
-  width: 100%;
+  height: 100%;
+  width: 70%;
+  object-fit: cover;
+  align-self: flex-end;
+}
+
+.about-text {
+  position: relative;
+  height: 100vh;
+}
+
+.about-text div {
+  position: sticky;
+  top: 20vh;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+  margin-left: 10%;
+  width: 35vh;
+}
+
+.about-video {
+  position: sticky;
+  top: 0vh;
+  bottom: 0;
+  height: 70vh;
+  width: 70vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.about-video video {
+  width: 70%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .pricing-container {
@@ -172,6 +235,7 @@ img {
   align-items: center;
   max-width: 1000px;
   margin: 0 auto;
+  margin-bottom: 100vh;
 }
 
 .pricing-info {
@@ -199,8 +263,9 @@ img {
 
 .pricing-image {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: flex-end;
   width: 520px;
 }
 
@@ -208,6 +273,10 @@ img {
   max-width: 100%;
   height: auto;
   object-fit: contain;
+}
+
+.mobile-book {
+  display: none;
 }
 
 #location {
@@ -290,4 +359,142 @@ img {
   width: 100%;
   height: 100%;
   display: block;
+}
+
+@media (max-width: 1100px) {
+  #hero {
+    background-position: calc(50% - 9em) center;
+    font-size: larger;
+  }
+  .hero-container h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .hero-container h3,
+  .pricing-note,
+  .price-card h3 {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+  }
+
+  #about {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .about-video {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    top: auto;
+  }
+
+  .about-container {
+    width: 100%;
+  }
+
+  .about-image {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    bottom: auto;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .about-text {
+    height: auto;
+    font-size: 1rem;
+  }
+
+  .about-text div {
+    position: relative;
+    top: auto;
+    padding-top: 2rem;
+    width: 80%;
+    padding-right: 1rem;
+  
+  }
+    .pricing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin-bottom: 0;
+    gap: 2rem;
+    padding-bottom: 4rem;
+  }
+
+  .pricing-image {
+    order: 1;
+    width: 100%;
+  }
+
+  .pricing-info {
+    order: 2;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .pricing-note {
+    width: 80vw;
+    font-size: 1rem;
+    order: 3;
+  }
+
+  .price-card h3 {
+    font-size: 1.2
+  }
+
+  .price-card {
+    margin-bottom: 4rem;
+  }
+
+  .pricing-image .desktop-book {
+    display: none;
+  }
+
+  .mobile-book {
+    display: block;
+    margin-top: 2rem;
+  }
+
+  #location {
+    position: relative;
+    inset: auto;
+    min-height: auto;
+    align-items: flex-start;
+    padding-top: 2rem;
+  }
+
+  .location-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    width: 100%;
+    margin: 0;
+  }
+
+  .location-left {
+    width: 100%;
+    text-align: center;
+  }
+
+  .location-left h2 {
+    margin-bottom: 1rem;
+  }
+
+  .location-block {
+    margin-bottom: 1rem;
+  }
+
+  .location-right {
+    width: 80%;
+    height: 40vh;
+  }
 }

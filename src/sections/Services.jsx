@@ -19,18 +19,15 @@ export default function Services() {
             <p>
               Please reach out with any questions about pricing or services. I look forward to working with you!
             </p>
-            <button>Contact Me</button>
+            <button className="button mobile-book">Book an Appointment</button>
           </div>
 
-         
         </div>
-
         <div className="pricing-image">
           <img src={haircutImage} alt="haircut" />
+          <button className="button desktop-book">Book an Appointment</button>
         </div>
       </div>
-     
-
     </Section>
   );
 }
