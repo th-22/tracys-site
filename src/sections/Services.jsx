@@ -1,7 +1,7 @@
 import Section from "../components/Section";
 import haircutImage from '../assets/images/blow_dry.jpg';
 
-export default function Services() {
+export default function Services({ onContactClick }) {
   return (
     <Section id="pricing">
       <div className="pricing-container">
@@ -25,7 +25,9 @@ export default function Services() {
         </div>
         <div className="pricing-image">
           <img src={haircutImage} alt="haircut" />
-          <button className="button desktop-book">Book an Appointment</button>
+          <button className="button desktop-book" onClick={onContactClick}>
+            Book an Appointment
+          </button>
         </div>
       </div>
     </Section>

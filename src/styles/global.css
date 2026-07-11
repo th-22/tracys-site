@@ -1,7 +1,8 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
-  width: 100%;
   box-sizing: border-box;
 }
 
@@ -33,6 +34,7 @@ img {
 }
 
 .button {
+  width: 14em;
   background: transparent;
   display: inline-flex;
   align-items: center;
@@ -71,43 +73,62 @@ img {
 .navbar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  gap: 4.5rem;
-  padding: 1rem 2rem;
+  height: 52px;
 
-  background: transparent;
-  color: var(--text-primary);
-  transition: transform 0.3s ease;
-  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 2rem;
+
+  background: #151515;
+  border-bottom: 1px solid var(--bg);
+
+  z-index: 1000;
+
+  transition: transform .35s ease;
 }
 
 .navbar.hidden {
   transform: translateY(-100%);
 }
 
-.navbar a {
-  opacity: 0.6;
-  transition: 0.2s;
-}
-
-.navbar a.active {
-  opacity: 1;
-  font-weight: 600;
-}
-
-.navbar-links {
-  display: flex;
-  gap: 4.5rem;
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
 .navbar-logo {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 600;
+  width: auto;
+  color: var(--text-primary);
+  text-decoration: none;
+
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.navbar-button {
+  width: auto;
+
+  padding: 0.15rem 1rem;
+
+  background: transparent;
+  color: var(--text-primary);
+
+  border: 1px solid currentColor;
+  border-radius: 999px;
+
+  font: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.navbar-button:hover {
+  background: var(--text-secondary);
+  color: var(--bg);
 }
 
 #hero {
@@ -183,6 +204,7 @@ img {
 }
 
 .about-image {
+  margin-top: 4em;
   width: 60vw;
   height: 70vh;
   overflow: hidden;
@@ -215,7 +237,7 @@ img {
   position: sticky;
   top: 0vh;
   bottom: 0;
-  height: 70vh;
+  height: 85vh;
   width: 70vw;
   overflow: hidden;
   display: flex;
@@ -361,6 +383,70 @@ img {
   display: block;
 }
 
+.contact-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgb(255 255 255 / 92%);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.contact-content {
+  position: relative;
+  width: min(90vw, 420px);
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.contact-text h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.contact-text p,
+.contact-note,
+.contact-text li {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.contact-phone {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: inherit;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.contact-phone:hover {
+  text-decoration: underline;
+}
+
+.contact-text ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
 @media (max-width: 1100px) {
   #hero {
     background-position: calc(50% - 9em) center;
@@ -393,6 +479,7 @@ img {
   }
 
   .about-image {
+    margin-top: 0;
     position: relative;
     width: 100%;
     height: 60vh;
@@ -416,8 +503,8 @@ img {
     padding-top: 2rem;
     width: 80%;
     padding-right: 1rem;
-  
   }
+
     .pricing-container {
     display: flex;
     flex-direction: column;
