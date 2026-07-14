@@ -16,12 +16,14 @@ export default function Contact({ isOpen, onClose }) {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 20, opacity: 0 }}
-            onClick={(e) => e.stopPropagation()}
           >
             <div className="contact-text">
          
               <h1>I take appointments by call or text.</h1>
-              <a className="contact-phone" href="tel:+12067291559">
+              <a className="contact-phone" 
+                href="tel:+12067291559" 
+                onClick={(e) => e.stopPropagation()}
+              >
                 (206) 729-1559
               </a>
               <p>
