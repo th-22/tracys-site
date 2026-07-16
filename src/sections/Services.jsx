@@ -19,7 +19,7 @@ export default function Services({ onContactClick }) {
             <p>
               Please reach out with any questions about pricing or services. I look forward to working with you!
             </p>
-            <button className="button mobile-book">Book an Appointment</button>
+            <button className="button mobile-book" onClick={onContactClick}>Book an Appointment</button>
           </div>
 
         </div>
