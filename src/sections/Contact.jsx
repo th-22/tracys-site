@@ -21,10 +21,10 @@ export default function Contact({ isOpen, onClose }) {
          
               <h1>I take appointments by call or text.</h1>
               <a className="contact-phone" 
-                href="tel:+12067291559" 
+                href="tel:+12069793771" 
                 onClick={(e) => e.stopPropagation()}
               >
-                (206) 729-1559
+                (206) 979-3771
               </a>
               <p>
                 When reaching out, please include your desired hairstyle,

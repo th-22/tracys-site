@@ -35,7 +35,7 @@ export default function Navbar({ onContactClick }) {
           lenis?.scrollTo(0);
         }}
       >
-        Tracy's Hair Salon
+        Tracy's Hair Studio
       </a>
 
       <button className="navbar-button" onClick={onContactClick}>

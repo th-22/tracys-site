@@ -61,7 +61,7 @@ export default function About() {
             }}
           >
             <p>
-              "After more than 20 years as a hair stylist, what I've come
+              "After more than 30 years as a hair stylist, what I've come
               to value most are the relationships I've built with the people
               who've trusted me along the way."
             </p>

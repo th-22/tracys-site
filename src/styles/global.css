@@ -17,6 +17,7 @@ body {
   background: var(--bg);
   color: var(--text-secondary);
   line-height: 1.6;
+  overflow: hidden;
 }
 
 h1, h2, h3 {
