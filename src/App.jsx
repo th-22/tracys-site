@@ -15,7 +15,6 @@ export default function App() {
             console.log(contactOpen);
 
   return (
-
     <>
       <main>
         <Contact
@@ -26,7 +25,6 @@ export default function App() {
         <Hero />
         <About />
         <Services onContactClick={() => setContactOpen(true)} />
-        
       </main>
       <Location />    
     </>
