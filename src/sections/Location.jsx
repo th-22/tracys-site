@@ -19,7 +19,9 @@ export default function Location() {
 
           <div className="location-block">
             <h3>Phone</h3>
-            <a href="tel:2067291559">(206) 729-1559</a>
+            <a href="tel:2069793771">Cell: (206) 979-3771</a>
+            <br />
+            <a href="tel:2067291559">Work: (206) 729-1559</a>
           </div>
 
           <div className="location-block">

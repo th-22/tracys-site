@@ -20,16 +20,25 @@ export default function Contact({ isOpen, onClose }) {
             <div className="contact-text">
          
               <h1>I take appointments by call or text.</h1>
-              <a className="contact-phone" 
-                href="tel:+12069793771" 
-                onClick={(e) => e.stopPropagation()}
-              >
-                (206) 979-3771
-              </a>
               <p>
                 When reaching out, please include your desired hairstyle,
                 current hair length, and any reference photos.
               </p>
+              <div className="contact-phones">
+                <a className="contact-phone" 
+                href="tel:+12069793771" 
+                onClick={(e) => e.stopPropagation()}
+                >
+                  Cell: (206) 979-3771
+                </a>
+                <a className="contact-phone" 
+                  href="tel:+12067291559" 
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Work: (206) 729-1559
+                </a>
+              </div>
+              
             </div>
           </motion.div>
         </motion.div>

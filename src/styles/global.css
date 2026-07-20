@@ -75,7 +75,7 @@ img {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 52px;
 
   display: flex;
@@ -397,7 +397,7 @@ img {
 
 .contact-content {
   position: relative;
-  width: min(90vw, 420px);
+  width: min(90vw, 455px);
   text-align: center;
   padding: 3rem 2rem;
 }
@@ -411,7 +411,7 @@ img {
 
 .contact-text h1 {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 400;
   line-height: 1.2;
 }
@@ -425,11 +425,18 @@ img {
   line-height: 1.7;
 }
 
+.contact-phones {
+  display: flex;
+  flex-direction: column; 
+  gap:1em;
+  width: 100vw;
+}
+
 .contact-phone {
   margin: 0;
   font-size: 1.25rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: .8;
   color: inherit;
   text-decoration: none;
   letter-spacing: 0.02em;
